@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenue chez Drazonia</title>
+  <link rel="stylesheet" href="Drazonia.css" /> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Rubik&display=swap" rel="stylesheet">
+  <script src="Drazonia.js" defer></script>
+</head>
+<body>
+  <video autoplay loop muted id="background-video" src="Starting_Screen.mp4" type="video/mp4"></video>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="#">Drazonia</a></div>
+      <ul class="links">
+        <li><a href="#qui-suis-je">Qui suis-je</a></li>
+        <li><a href="#discord">Mon Discord</a></li>
+        <li><a href="#reseaux">Mes réseaux</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#mail-pro">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="neon-text">
+      <span>Bienvenue</span>
+      <span>chez</span>
+      <span>Drazonia</span>
+    </div>
+
+    <div class="profile-picture animated-entry">
+        <img src="Drazonia.png" alt="Photo de Drazonia">
+    </div>
+
+    <p class="intro">
+      Ici, vous êtes sur le menu principal. <br />
+      Utilisez les liens ci-dessus pour explorer mon univers !
+      Le site est en accès anticipé, <br />
+      mais vous pouvez déjà découvrir qui je suis, rejoindre mon Discord et suivre mes réseaux sociaux. <br />
+      <br />
+    </p>
+  </header>
+
+  <section class="content" id="qui-suis-je">
+    <h1>Qui suis-je ?</h1>
+    <p>Yosh ! Moi c’est Drazonia,</p>
+    <p>je partage mon univers gaming en stream 🎮</p>
+    <p>Je joue à LoL, Valorant, HSR, Genshin et plein d'autres jeux solo !</p>
+  </section>
+
+  <section class="content2" id="discord">
+    <div class="discord-title">
+      <h1>Mon Discord</h1>
+      <img src="discord.png" alt="discord" class="discord-logo">
+    </div>
+    <p>
+      Rejoins notre communauté ici :
+      <a href="https://discord.gg/h3GaE63YCn" target="_blank">Lien vers le discord de Drazonia</a><br />
+      Tu es le/la bienvenu·e ! Viens t’amuser et papoter avec nous 💬
+    </p>
+    <h2>Nombre de Drazoyans : <span id="member-count">Chargement...</span></h2>
+  </section>
+
+  <section class="reseau" id="reseaux">
+    <h1>Mes Réseaux</h1>
+    <p>Pour ne rien manquer de mes lives et actus :</p>
+    <ul>
+      <li><a href="https://www.youtube.com/@Drazonia" target="_blank"><img src="Youtube.png" alt="Youtube"></a></li>
+      <li><a href="https://www.twitch.tv/drazonia" target="_blank"><img src="twitch.png" alt="Twitch"></a></li>
+      <li><a href="https://x.com/Drazoniaa" target="_blank"><img src="Twitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.instagram.com/drazonia/" target="_blank"><img src="instagram.png" alt="instagram"></a></li>
+      <li><a href="https://www.tiktok.com/@drazonia" target="_blank"><img src="TikTok.png" alt="Tiktok"></a></li>
+    </ul>
+  </section>
+  <section class="content3" id="a-propos">
+    <h1>À propos de ce site</h1>
+    <p>
+      Ce site est en accès anticipé. Créé par Chocolait pour le défi et optimisé par Make_Chen, il a pour but de vous faire découvrir l’univers et les passions de Drazonia.<br>
+      Restez connectés, de nouveaux contenus arrivent bientôt !
+    </p>
+    <p>
+      Si vous avez des suggestions ou des questions, n’hésitez pas à me contacter via mes réseaux sociaux.<br>
+      Merci de votre visite et à très bientôt !
+    </p>
+  </section>
+  <script>
+    // Script pour récupérer le nombre de membres du serveur Discord
+    async function fetchMemberCount() {
+      try {
+        const response = await fetch('https://discord.com/api/guilds/123456789012345678/widget.json'); // Remplacez par l'ID de votre serveur
+        const data = await response.json();
+        document.getElementById('member-count').textContent = data.members.length;
+      } catch (error) {
+        console.error('Erreur lors de la récupération du nombre de membres :', error);
+        document.getElementById('member-count').textContent = 'Erreur';
+      }
+    }
+
+    fetchMemberCount();
+  </script>
+  <script>
+    // Animation d'entrée pour la photo de profil
+    document.addEventListener('DOMContentLoaded', () => {
+      const profilePicture = document.querySelector('.profile-picture');
+      profilePicture.classList.add('fade-in');
+    });
+  </script>
+  <section class = "content4" id = "mail-pro">
+    <h1>Contact</h1>
+    <p>Pour toute demande professionnelle ou collaboration, vous pouvez me contacter par email : </p>
+    <p><a href="mailto:Drazoniapro@gmail.com">Drazoniapro@gmail.com</a></p>
+  </section>
+  <footer>
+      <p>© 2025 Drazonia. Tous droits réservés.</p>
+      <p>Site créé avec passion par Drazonia.</p>
+  </footer>
+</body>
+</html>
