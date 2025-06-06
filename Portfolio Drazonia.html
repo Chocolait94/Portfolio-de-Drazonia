@@ -11,7 +11,7 @@
 </head>
 <body>
   <video autoplay loop muted id="background-video" src="Starting_Screen.mp4" type="video/mp4"></video>
-
+<!-- navbar -->
   <header>
     <nav class="navbar">
       <div class="logo"><a href="#">Drazonia</a></div>
@@ -23,7 +23,8 @@
         <li><a href="#mail-pro">Contact</a></li>
       </ul>
     </nav>
-
+<!-- navbar -->
+<!-- contenue de la page --> 
     <div class="neon-text">
       <span>Bienvenue</span>
       <span>chez</span>
@@ -58,9 +59,9 @@
     <p>
       Rejoins notre communauté ici :
       <a href="https://discord.gg/h3GaE63YCn" target="_blank">Lien vers le discord de Drazonia</a><br />
-      Tu es le/la bienvenu·e ! Viens t’amuser et papoter avec nous 💬
+      Tu es le/la bienvenue ! Viens t’amuser et papoter avec nous 💬
     </p>
-    <h2>Nombre de Drazoyans : <span id="member-count">Chargement...</span></h2>
+    <h2>Nombre de Drazoyans actuellement : <span id="member-count">Chargement...</span></h2>
   </section>
 
   <section class="reseau" id="reseaux">
@@ -85,11 +86,18 @@
       Merci de votre visite et à très bientôt !
     </p>
   </section>
+    <section class = "content4" id = "mail-pro">
+    <h1>Contact</h1>
+    <p>Pour toute demande professionnelle ou collaboration, vous pouvez me contacter par email : </p>
+    <p><a href="mailto:Drazoniapro@gmail.com">Drazoniapro@gmail.com</a></p>
+  </section>
+<!-- contenue de la page -->  
+<!-- script pour récupérer les informations -->  
   <script>
     // Script pour récupérer le nombre de membres du serveur Discord
     async function fetchMemberCount() {
       try {
-        const response = await fetch('https://discord.com/api/guilds/123456789012345678/widget.json'); // Remplacez par l'ID de votre serveur
+        const response = await fetch('https://discord.com/api/guilds/1103080337644457996/widget.json'); // Remplacez par l'ID de votre serveur
         const data = await response.json();
         document.getElementById('member-count').textContent = data.members.length;
       } catch (error) {
@@ -98,7 +106,7 @@
       }
     }
 
-    fetchMemberCount();
+    fetchMemberCount(); //appel de la fonction pour récupérer le nombre de membres
   </script>
   <script>
     // Animation d'entrée pour la photo de profil
@@ -107,14 +115,12 @@
       profilePicture.classList.add('fade-in');
     });
   </script>
-  <section class = "content4" id = "mail-pro">
-    <h1>Contact</h1>
-    <p>Pour toute demande professionnelle ou collaboration, vous pouvez me contacter par email : </p>
-    <p><a href="mailto:Drazoniapro@gmail.com">Drazoniapro@gmail.com</a></p>
-  </section>
+<!-- contenue de la page -->  
+<!-- copyright -->  
   <footer>
       <p>© 2025 Drazonia. Tous droits réservés.</p>
       <p>Site créé avec passion par Drazonia.</p>
   </footer>
+<!-- copyright -->   
 </body>
 </html>
