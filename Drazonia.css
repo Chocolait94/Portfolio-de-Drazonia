@@ -10,17 +10,6 @@ body {
   background-color: #000;
   overflow-x: hidden;
 }
-/* --- Styles pour les fleurs de cerisier --- */
-.cherry-blossom {
-    position: fixed;
-    background-image: url('fleur-cerisier.png'); /* Chemin vers votre image */
-    background-size: contain; /* Ajuste l'image à la taille de la div */
-    background-repeat: no-repeat; /* Empêche l'image de se répéter */
-    object-fit: cover;
-    opacity: 0.8;
-    pointer-events: none; /* Ne bloque pas les interactions de la souris */
-    z-index: 1000; /* Assure que les fleurs apparaissent au-dessus de tout le contenu */
-}
 
 #background-video {
   position: fixed;
