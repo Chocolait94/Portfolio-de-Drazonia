@@ -10,16 +10,9 @@ body {
   background-color: #000;
   overflow-x: hidden;
 }
-/* --- Styles pour les fleurs de cerisier --- */
-.cherry-blossom {
-    position: fixed;
-    background-image: url('fleur-cerisier.png'); /* Chemin vers votre image */
-    background-size: contain; /* Ajuste l'image à la taille de la div */
-    background-repeat: no-repeat; /* Empêche l'image de se répéter */
-    object-fit: cover;
-    opacity: 0.8;
-    pointer-events: none; /* Ne bloque pas les interactions de la souris */
-    z-index: 1000; /* Assure que les fleurs apparaissent au-dessus de tout le contenu */
+
+html {
+  scroll-behavior: smooth;
 }
 
 #background-video {
@@ -56,17 +49,41 @@ body {
   display: flex;
   gap: 2rem;
   text-decoration: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .links a {
   color: #fff;
   font-size: 1rem;
   transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
   text-decoration: none;
 }
 
 .links a:hover {
   color: #ad7add;
+}
+
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  display: block;
+  border-radius: 2px;
 }
 
 /* Neon Text */
@@ -93,7 +110,7 @@ body {
 }
 
 p.intro {
-  margin-top: 55px;
+  margin-top: 59px;
   font-size: 33.5px;
   font-weight: bolder;
   color: #fff;
@@ -106,7 +123,7 @@ p.intro {
 .profile-picture {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .profile-picture img {
@@ -181,6 +198,7 @@ section a:hover {
   vertical-align: middle;
   transition: transform 0.2s;
 }
+
 
 .reseau img:hover {
   transform: scale(1.15);
@@ -332,6 +350,40 @@ section a:hover {
   font-weight: bold;
 }
 
+.heading-with-image {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ➜ centre horizontalement */
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.heading-with-image h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.dh_mc-image,
+.contact-image {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+.herta-image {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+.reseau .misha-image {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
@@ -339,9 +391,14 @@ section a:hover {
     align-items: center;
   }
 
-  .links {
-    flex-direction: column;
-    gap: 1rem;
+  p.intro {
+    font-size: 28px;
+    margin-top: 40px;
+  }
+
+  .links li a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .neon-text {
@@ -365,8 +422,13 @@ section a:hover {
     font-size: 1.5rem;
   }
 
-  .links a {
-    font-size: 0.9rem;
+  .links {
+    gap: 0.6rem;
+  }
+
+  .links li a {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
   }
 
   .neon-text {
@@ -391,8 +453,13 @@ section a:hover {
     font-size: 1.2rem;
   }
 
-  .links a {
-    font-size: 0.8rem;
+  .links {
+    gap: 0.4rem;
+  }
+
+  .links li a {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
   }
 
   .neon-text {
@@ -421,7 +488,7 @@ footer {
 }
 footer p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 footer p {
   color: #ad7add;
@@ -431,3 +498,24 @@ footer p:hover {
   text-decoration: none;
 }
 
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  z-index: 999;
+  background-color: #ad7add;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ad7add;
+  font-size: 18px;
+  display: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#scrollToTopBtn:hover {
+  transform: scale(1.15);
+  background-color: #7c4fa4;
+}
